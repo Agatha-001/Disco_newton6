@@ -529,3 +529,24 @@ function previousCard() {
 
 
 renderFlashcard();
+
+// ========================================
+// DISCO DE NEWTON - GIRAR
+// ========================================
+
+const newtonDisc =
+  document.getElementById("newtonDisc");
+
+
+function startDisc() {
+
+  newtonDisc.classList.add("spinning");
+
+}
+
+
+function stopDisc() {
+
+  newtonDisc.classList.remove("spinning");
+
+}
