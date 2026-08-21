@@ -1110,3 +1110,71 @@ footer p {
   }
 
 }
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+  background: #12162e;
+  color: white;
+  padding: 50px 8%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.footer-content > p {
+  color: #b9bed2;
+  margin-bottom: 20px;
+}
+
+.grupo {
+  border-left: 3px solid #7c5cff;
+  padding-left: 18px;
+}
+
+.grupo h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.grupo p {
+  color: #d8daea;
+  margin: 4px 0;
+}
+
+.footer-right {
+  color: #b9bed2;
+  max-width: 300px;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+
+  footer {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .grupo {
+    border-left: none;
+    border-top: 3px solid #7c5cff;
+    padding-left: 0;
+    padding-top: 15px;
+  }
+
+  .footer-right {
+    text-align: center;
+  }
+
+}
