@@ -1178,3 +1178,108 @@ footer {
   }
 
 }
+
+.disc {
+  width: min(370px, 72vw);
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  border: 10px solid rgba(255,255,255,.9);
+
+  position: relative;
+
+  overflow: hidden;
+
+  box-shadow: 0 30px 70px rgba(0,0,0,.3);
+
+  background:
+    conic-gradient(
+      #f00 0deg 51deg,
+      #ff8a00 51deg 103deg,
+      #fff000 103deg 154deg,
+      #00a81a 154deg 206deg,
+      #00bfe8 206deg 257deg,
+      #1527ff 257deg 309deg,
+      #7619dc 309deg 360deg
+    );
+}
+
+/* CENTRO DO DISCO */
+
+.disc::after {
+  content: "";
+
+  position: absolute;
+
+  width: 25px;
+  height: 25px;
+
+  background: #eee;
+
+  border: 5px solid #999;
+
+  border-radius: 50%;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+
+/* CONTROLES */
+
+.disc-controls {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+
+.disc-controls button {
+  border: none;
+
+  padding: 10px 18px;
+
+  border-radius: 10px;
+
+  background: white;
+
+  color: #4320c7;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+
+.disc-controls button:hover {
+  transform: scale(1.05);
+}
+
+
+/* ANIMAÇÃO */
+
+.spinning {
+  animation: spinDisc .35s linear infinite;
+}
+
+
+@keyframes spinDisc {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
