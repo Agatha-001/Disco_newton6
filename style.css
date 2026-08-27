@@ -1286,28 +1286,99 @@ footer {
 
 
 /* =========================
-   DISCO GIRANDO
+   DISCO DE NEWTON
 ========================= */
+
+.disc {
+  width: min(370px, 72vw);
+  aspect-ratio: 1;
+
+  position: relative;
+  border-radius: 50%;
+
+  border: 10px solid white;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  background: white;
+
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .3);
+
+  transition: transform .2s;
+}
+
+
+/* CORES */
+
+.disc::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      #ff0000 0deg 51deg,
+      #ff8a00 51deg 103deg,
+      #fff000 103deg 154deg,
+      #00b900 154deg 206deg,
+      #00bfe8 206deg 257deg,
+      #1527ff 257deg 309deg,
+      #7619dc 309deg 360deg
+    );
+}
+
+
+/* CENTRO DO DISCO */
+
+.disc::after {
+  content: "";
+
+  position: absolute;
+
+  width: 30px;
+  height: 30px;
+
+  background: #eeeeee;
+
+  border: 6px solid #888;
+
+  border-radius: 50%;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 2;
+}
+
+
+/* DISCO GIRANDO */
 
 .disc.spinning::before {
 
   animation:
-    spinDisc .12s linear infinite;
+    spinNewton .08s linear infinite;
 
   /*
-    O desfoque simula visualmente
-    a mistura das cores durante
-    a rotação rápida.
+    Desfoque durante a rotação
+    para representar visualmente
+    a mistura das cores.
   */
 
-  filter: blur(3px);
+  filter: blur(4px);
 
 }
 
 
 /* ROTAÇÃO */
 
-@keyframes spinDisc {
+@keyframes spinNewton {
 
   from {
     transform: rotate(0deg);
@@ -1320,48 +1391,19 @@ footer {
 }
 
 
-/* =========================
-   BOTÕES
-========================= */
+/* EFEITO AO PASSAR O MOUSE */
 
-.disc-controls {
+.disc:hover {
 
-  display: flex;
+  transform: scale(1.03);
 
-  justify-content: center;
-
-  gap: 10px;
-
-  margin-top: 20px;
 }
 
 
-.disc-controls button {
+/* CURSOR */
 
-  border: none;
-
-  padding: 11px 20px;
-
-  border-radius: 10px;
-
-  background: white;
-
-  color: #4320c7;
-
-  font-weight: bold;
+.disc {
 
   cursor: pointer;
-
-  transition: .2s;
-
-}
-
-
-.disc-controls button:hover {
-
-  transform: scale(1.05);
-
-  box-shadow:
-    0 5px 15px rgba(0,0,0,.2);
 
 }
